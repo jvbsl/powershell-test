@@ -19,9 +19,9 @@
 
         <LitGit>'$(MSBuildThisFileDirectory)/LitGit$(ScriptFileEnding)'</LitGit>
     </PropertyGroup>
-    
+
     <Target Name="BuildLitGitVersions" BeforeTargets="BeforeBuild;PreBuildEvent">
-    
+
         <Exec Command="$(ScriptExe) $(ScriptPrefix)$(LitGit)" ConsoleToMSBuild="true" />
     </Target>
 </Project>
