@@ -1,3 +1,4 @@
 #Get-Module -ListAvailable
-Import-Module -Name PackageManagement
+$m = Get-Module -ListAvailable PackageManagement
+Import-Module -ModuleInfo $m
 Get-Package -Name Microsoft.Extensions.FileSystemGlobbing -ErrorAction SilentlyContinue
