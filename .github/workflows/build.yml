@@ -15,8 +15,5 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: Test pwsh
-      run: Get-Module -ListAvailable
-      shell: powershell
     - name: Build csproj
       run: dotnet build
