@@ -14,3 +14,5 @@ jobs:
     - name: Test pwsh
       run: Get-Module -ListAvailable
       shell: powershell
+    - name: Build csproj
+      run: dotnet build
