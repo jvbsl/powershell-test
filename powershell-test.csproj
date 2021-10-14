@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>powershell_test</RootNamespace>
+  </PropertyGroup>
+
+
+
+    <PropertyGroup>
+        <ScriptExe Condition="'$(OS)' == 'Windows_NT'" >powershell.exe -NoProfile -InputFormat None -ExecutionPolicy Bypass</ScriptExe>
+        <ScriptExe Condition="'$(OS)' != 'Windows_NT'" >bash</ScriptExe>
+        <ScriptPrefix Condition="'$(OS)' == 'Windows_NT'" >&quot;&amp;</ScriptPrefix>
+        <ScriptPostfix  Condition="'$(OS)' == 'Windows_NT'" >&quot;</ScriptPostfix>
+
+        <ScriptFileEnding Condition="'$(OS)' == 'Windows_NT'" >.ps1</ScriptFileEnding>
+        <ScriptFileEnding Condition="'$(OS)' != 'Windows_NT'" ></ScriptFileEnding>
+
+        <LitGit>'$(MSBuildThisFileDirectory)/LitGit$(ScriptFileEnding)'</LitGit>
+    </PropertyGroup>
+    
+    <Target Name="BuildLitGitVersions" BeforeTargets="BeforeBuild;PreBuildEvent">
+    
+        <Exec Command="$(ScriptExe) $(ScriptPrefix)$(LitGit)" ConsoleToMSBuild="true" />
+    </Target>
+</Project>
