@@ -1,0 +1,16 @@
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:        
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix: 
+        os: [windows-latest]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Test pwsh
+      run: Get-Module -ListAvailable
+      shell: powershell.exe
