@@ -1,6 +1,5 @@
-#Get-Module -ListAvailable
+Get-Module -ListAvailable -PSEdition Desktop
 
-ls "C:\program files\powershell\7\Modules\PackageManagement\"
 
 $m = Get-Module -ListAvailable PowerShellGet
 Import-Module -ModuleInfo $m
