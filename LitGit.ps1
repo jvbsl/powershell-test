@@ -1,5 +1,5 @@
 #Get-Module -ListAvailable
-$m = Get-Module -ListAvailable OngeGet
+$m = Get-Module -ListAvailable OneGet
 Import-Module -ModuleInfo $m
 $m = Get-Module -ListAvailable PackageManagement
 Import-Module -ModuleInfo $m
