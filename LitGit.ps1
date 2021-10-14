@@ -5,4 +5,4 @@
 #Import-Module -ModuleInfo $m
 $m = Get-Module -ListAvailable PackageManagement -PSEdition Desktop
 Import-Module -ModuleInfo $m
-Get-Package -Name Microsoft.Extensions.FileSystemGlobbing -ErrorAction SilentlyContinue
+Get-Package -Name Microsoft.Extensions.FileSystemGlobbing
